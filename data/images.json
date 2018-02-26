@@ -1,0 +1,20 @@
+{
+    "images": [
+        {
+            "title": "local",
+            "url": "images/greenScreen.jpg"
+        },
+        {
+            "title": "remote random",
+            "url": "http://lorempixel.com/400/200/sports/1/"
+        },
+        {
+            "title": "remote image",
+            "url": "http://www.gstatic.com/hostedimg/6c08519dd8af3309_large"
+        },
+        {
+            "title": "remote ssl",
+            "url": "https://users.cs.duke.edu/~rcd/images/rcd.jpg"
+        }
+    ]
+}

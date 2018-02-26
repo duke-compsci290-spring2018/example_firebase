@@ -1,0 +1,16 @@
+{
+    "todos": [
+        {
+            "title": "Download code",
+            "completed": true
+        },
+        {
+            "title": "Study code",
+            "completed": true
+        },
+        {
+            "title": "Finish code",
+            "completed": true
+        }
+    ]
+}

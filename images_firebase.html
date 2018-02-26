@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Gary Carino, Robert C. Duvall">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuefire/1.4.5/vuefire.js"></script>
+    <!-- support for this page -->
+    <link rel="stylesheet" href="css/images_firebase.css">
+    <script src="js/images_firebase.js" async></script>
+    <title>Collected Images</title>
+</head>
+
+<body>
+<div id='container'>
+    <div id='title'>
+        <h1>Collected Images</h1>
+    </div>
+
+    <div id="app">
+        <section class="actions" v-cloak>
+            <form id="form" @submit.prevent="storeImage">
+                <div>
+                    <label for="imgTitle">Title:</label>
+                    <input type="text" id="imgTitle" v-model="newImageTitle">
+                    <input type="file" id="files" name="files[]" />
+                </div>
+                <div>
+                    <input type="submit" value="Add Image" />
+                </div>
+            </form>
+        </section>
+
+        <section class="main" v-cloak>
+            <div class="image"
+                 v-for="img in reversedImages">
+                <h3>{{ img.title }}</h3>
+                <img :src="img.url">
+            </div>
+        </section>
+    </div>
+</div>
+
+</body>
+</html>
