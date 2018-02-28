@@ -1,0 +1,78 @@
+[
+    {
+        "title": "Duke Links",
+        "edit": false,
+        "links": [
+            {
+                "name": "Duke University",
+                "url": "http://www.duke.edu/"
+            },
+            {
+                "name": "Duke Computer Science",
+                "url": "http://www.cs.duke.edu/"
+            },
+            {
+                "name": "Duke Basketball",
+                "url": "http://www.goduke.com/SportSelect.dbml?SPID=1846"
+            },
+            {
+                "name": "Duke Lemur Center",
+                "url": "http://lemur.duke.edu/"
+            },
+            {
+                "name": "Duke Marine Lab",
+                "url": "https://nicholas.duke.edu/marinelab"
+            },
+            {
+                "name": "Events at Duke",
+                "url": "http://calendar.duke.edu/events/"
+            },
+            {
+                "name": "Duke Chronicle",
+                "url": "http://www.dukechronicle.com/"
+            },
+            {
+                "name": "Duke Chapel",
+                "url": "https://chapel.duke.edu/"
+            }
+        ]
+    },
+    {
+        "title": "CompSci Links",
+        "edit": false,
+        "links": [
+            {
+                "name":"Duke Computer Science",
+                "url":"http://www.cs.duke.edu/"
+            },
+            {
+                "name":"Association for Computing Machinery (ACM)",
+                "url":"http://www.acm.org/"
+            },
+            {
+                "name":"Institute of Electrical and Electronics Engineers (IEEE)",
+                "url":"http://www.ieee.org/"
+            },
+            {
+                "name":"Coding Horror",
+                "url":"http://blog.codinghorror.com/"
+            },
+            {
+                "name":"Open Source Initiative",
+                "url":"https://opensource.org/"
+            },
+            {
+                "name":"W3 Schools",
+                "url":"https://www.w3schools.com/"
+            },
+            {
+                "name":"The Programmable Web",
+                "url":"https://www.programmableweb.com/"
+            },
+            {
+                "name":"Crap Code",
+                "url":"http://codecrap.com/"
+            }
+        ]
+    }
+]

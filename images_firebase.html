@@ -24,8 +24,8 @@
         <h1>Collected Images</h1>
     </div>
 
-    <div id="app">
-        <section class="actions" v-cloak>
+    <div id="app" v-cloak>
+        <section class="actions">
             <form id="form" @submit.prevent="storeImage">
                 <div>
                     <label for="imgTitle">Title:</label>
@@ -38,7 +38,7 @@
             </form>
         </section>
 
-        <section class="main" v-cloak>
+        <section class="main">
             <div class="image"
                  v-for="img in reversedImages">
                 <h3>{{ img.title }}</h3>

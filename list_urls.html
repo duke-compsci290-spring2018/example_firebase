@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- always put your name in your work -->
+    <meta name="author" content="Robert C. Duvall">
+    <!-- stop the web browser from ever caching this page or its images -->
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- libraries neded for this page -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <!-- support for this page -->
+    <link rel="stylesheet" href="css/list_urls.css">
+    <script src="js/list_urls.js" async></script>
+    <title>List URLs</title>
+</head>
+<body>
+    <h1>My Favorite Sites</h1>
+
+    <div id="app" v-cloak>
+        <ul id="js-linklist">
+            <!-- loop each element in list as usual -->
+            <li v-for="item in items">
+                <!-- conditionally allow titles to be editted -->
+                <input v-if="item.edit" v-model="item.title" @keyup.enter="item.edit = false" />
+                <label v-else @dblclick="item.edit = true">{{ item.title }}</label>
+                <ul>
+                    <!-- within element that defines outer loop, loop over each element in sublist -->
+                    <li class="link" v-for="link in item.links">
+                        <a :href="link.url">{{ link.name }}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>
