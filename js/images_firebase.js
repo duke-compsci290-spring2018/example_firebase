@@ -67,6 +67,19 @@ var app = new Vue({
             });
             // reset input values so user knows to input new data
             this.newImageTitle = '';
+        },
+
+        removeImage (img) {
+            if (confirm('Are you sure you want to remove this image?')) {
+                // remove the database entry for the image
+                imagesRef.child(img['.key']).remove();
+                // remove the image in shared storage as well
+                var path = new URL(img.url).pathname.split(/\/|%2F/).slice(-2).join('/');
+                storageRef.child(path)
+                          .delete()
+                          .then(() => console.log('Image deleted'))
+                          .catch(err => console.log(err));
+            }
         }
     }
 });

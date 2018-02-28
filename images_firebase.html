@@ -42,7 +42,7 @@
             <div class="image"
                  v-for="img in reversedImages">
                 <h3>{{ img.title }}</h3>
-                <img :src="img.url">
+                <img :src="img.url" @dblclick="removeImage(img)">
             </div>
         </section>
     </div>
