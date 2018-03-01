@@ -4,6 +4,7 @@
  * @author Robert C. Duvall
  */
 
+/* general styles */
 body {
     background-color: lemonchiffon;
 }
@@ -16,7 +17,63 @@ a {
     color: darkorange;
 }
 
-.link {
+li svg {
+    width: 25px;
+    height: 25px;
+    fill: limegreen;
+    margin: auto -20px;
+    display: block;
+}
+
+.add-item {
+    list-style: none;
+    padding: 0 0 0 10px;
+}
+
+/* traditional list styles */
+li.title {
+    color: lightseagreen;
+    list-style: none;
+    margin: 20px 0 0 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+li.link {
     list-style: square;
-    color: blueviolet;
+}
+
+/* card based styles */
+.card .title {
+    text-align: center;
+    color: darkviolet;
+    background-color: lightsteelblue;
+    box-sizing: border-box;
+    border-radius: 3px;
+    padding: 1rem;
+    padding-bottom: 2rem;
+    margin: 0 10px;
+    float: left;
+}
+
+.card .link {
+    list-style: none;
+    font-weight: normal;
+    text-align: left;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fafafa;
+    margin: 5px -20px;
+    padding: 1rem;
+    width: 100%;
+}
+
+.card a {
+    color: dodgerblue;
+}
+
+.card li svg {
+    fill: darkcyan;
+    margin: 20px -32px;
 }

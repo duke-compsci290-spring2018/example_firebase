@@ -1,30 +1,57 @@
 /*
- * List your favorite URLs.
+ * Add to list of your favorite URLs.
  *
  * @author Robert C. Duvall
  */
 
+// set up for Firebase
+var config = {
+    apiKey: "AIzaSyDIlqyi47m8Aj51tZmszdGjABDvOqY8EPw",
+    authDomain: "vue-list-urls.firebaseapp.com",
+    databaseURL: "https://vue-list-urls.firebaseio.com",
+    projectId: "vue-list-urls",
+    storageBucket: "vue-list-urls.appspot.com",
+    messagingSenderId: "576087987271"
+};
+// global access to initialized app database
+var db = firebase.initializeApp(config).database();
+// global reference to remote data
+var itemsRef = db.ref('items');
+// connect Firebase to Vue
+Vue.use(VueFire);
+
 // create Vue object that will communicate with HTML DOM
 var app = new Vue({
     data: {
-        items: []
+        // state to keep track of local editted contents
+        newLinkText: '',
+        newLinkURL: ''
+    },
+
+    firebase: {
+        items: itemsRef
     },
 
     methods: {
-        // load links dynamically from separate URL in the background without reloading page
-        loadItems (url) {
-            // fetch is a new general purpose way to use AJAX that uses "promises"
-            // - first function is called when the data is loaded
-            // - second function is called when data is converted to JSON
-            fetch(url).then(response => response.json())
-                      .then(data => this.items = data)
-                      .catch(error => console.log(error));
-        }
-    },
+        // add newly entered link to the given item if it exists
+        addLink (item) {
+            // make sure something has been entered into the form
+            if (this.newLinkText && this.newLinkURL) {
+                // add new link to the links field of the given item
+                itemsRef.child(item['.key']).child('links').push({
+                    name: this.newLinkText,
+                    url: this.newLinkURL
+                });
+                this.resetAddLink(item);
+            }
+        },
 
-    // get links dynamically when app is ready
-    mounted () {
-        this.loadItems('data/nested_links.json');
+        // clear input form to prepare for the next entry
+        resetAddLink (item) {
+            this.newLinkText = '';
+            this.newLinkURL = '';
+            item.isAddingLink = false;
+        }
     }
 });
 

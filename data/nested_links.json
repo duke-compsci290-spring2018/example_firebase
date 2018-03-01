@@ -1,7 +1,8 @@
 [
     {
         "title": "Duke Links",
-        "edit": false,
+        "isEditting": false,
+        "isAddingLink": false,
         "links": [
             {
                 "name": "Duke University",
@@ -39,7 +40,8 @@
     },
     {
         "title": "CompSci Links",
-        "edit": false,
+        "isEditting": false,
+        "isAddingLink": false,
         "links": [
             {
                 "name":"Duke Computer Science",
