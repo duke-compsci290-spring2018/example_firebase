@@ -44,7 +44,7 @@ var app = new Vue({
 
     methods: {
         // get image selected by user and upload it to Firebase for storage
-        storeImage (event) {
+        storeImage () {
             // get input element user used to select local image
             var input = document.getElementById('files');
             // have all fields in the form been completed
